@@ -23,3 +23,6 @@ def get_db():
         yield db
     finally:
         db.close()
+
+# This will be used later for a dependency injection
+db_dependency = Annotated[Session, Depends(get_db)]
