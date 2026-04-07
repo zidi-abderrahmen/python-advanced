@@ -21,10 +21,22 @@ def main():
         # get the comment text and lower case it
         comment_text = comment.get_text().lower()
 
-        # split comment by space which create an array of words
-        words = comment_text.split(" ")
+        # Use the string strip function
+        # and place all the caracters we want to strip away
+        # Use a set to have unique words
+        words = {w.strip(".,/:;!@") for w in words}
 
-        print(words)
+        # Use the string strip function
+        # and place all the caracters we want to strip away
+        words = [w.strip(".,/:;!@") for w in words]
+
+        # search for k in keywords, this give you the dictionory key
+        # if the key is in the words set, we add 1 to the keywords score
+        for k in keywords:
+            if k in words:
+                keywords[k] += 1
+                
+    print(keywords)
 
 if __name__ == "__main__":
     main()
