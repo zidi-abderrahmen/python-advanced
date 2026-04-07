@@ -12,8 +12,10 @@ def main():
     # for each of this elements, find the next element
     comments = [e.find_next(class_="comment") for e in elements]
 
-    # Show the number of comments found
-    print(f"Comments: {len(comments)}")
+    # show each comment (job post)
+    for comment in comments:
+        comment_text = comment.get_text()
+        print(comment_text)
 
 if __name__ == "__main__":
     main()
