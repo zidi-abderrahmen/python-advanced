@@ -6,6 +6,8 @@ from database import engine, SessionLocal
 from sqlalchemy.orm import Session
 
 app = FastAPI()
+# Create all the tables and columns in PostgreSQL
+models.Base.metadata.create_all(bind=engine)
 
 class ChoiceBase(BaseModel):
     choice_text: str
