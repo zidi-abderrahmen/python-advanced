@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-
+import matplotlib.pyplot as plt
 
 def main():
     url = "https://news.ycombinator.com/item?id=42919502"
@@ -35,8 +35,15 @@ def main():
         for k in keywords:
             if k in words:
                 keywords[k] += 1
-                
+
     print(keywords)
+
+    # plot a bar graph
+    plt.bar(keywords.keys(), keywords.values())
+    # Add labels
+    plt.xlabel("Language")
+    plt.ylabel("# of Mentions")
+    plt.show()
 
 if __name__ == "__main__":
     main()
