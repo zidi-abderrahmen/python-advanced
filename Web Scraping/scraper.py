@@ -5,6 +5,7 @@ def main():
     response = requests.get(url)
     print(f"Scraping: {url}")
     print(response)
+    print(response.content)
 
 if __name__ == "__main__":
     main()
